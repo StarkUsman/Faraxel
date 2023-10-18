@@ -8,9 +8,6 @@ li {
   margin-bottom: 10px;
   padding: 0;
 }
-/* body, html{
-    height: 100%;
-} */
 
 .parallax {
   /* The image used */
@@ -149,10 +146,93 @@ nav ul li a {
   color: #ffd700; /* Gold color */
 }
 
-footer {
+/* Developer Team Section Styles */
+.developer-team {
   background-color: #333;
+  padding: 40px 0;
+  color: #fff;
+  /* text-align: center; */
+  overflow: hidden; /* Hide overflow content to prevent horizontal scrollbar */
+}
+
+.developer-team h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.team-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  display: flex;
+  overflow: hidden; /* Hide overflow content to create a scrolling effect */
+}
+
+.team-card {
+  flex: 0 0 calc(33.33% - 20px);
+  background-color: #444;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-right: 20px;
+  display: inline-block;
+  cursor: pointer;
+  animation: cardSlide 10s linear infinite; /* Adjust the animation duration as needed */
+}
+
+.team-card:last-child {
+  margin-right: 0;
+}
+
+.team-card img {
+  max-width: 100%;
+  border-radius: 50%;
+  max-height: 150px;
+}
+
+.team-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.team-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.team-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #ffd700;
+}
+
+@keyframes cardSlide {
+  0% {
+    transform: translateX(100%); /* Initial position, cards start off-screen */
+  }
+  100% {
+    transform: translateX(
+      -100%
+    ); /* Final position, cards move off-screen to the left */
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000000;
   text-align: center;
   padding: 20px 0;
+  color: #fff;
+}
+
+footer p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style: none;
 }
 
 footer ul li {
@@ -163,4 +243,11 @@ footer ul li {
 footer ul li a {
   color: #fff;
   text-decoration: none;
+}
+.team-card:hover {
+  animation-play-state: paused;
+}
+
+.team-card:hover ~ .team-card {
+  animation-play-state: running;
 }
